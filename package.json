@@ -1,0 +1,16 @@
+{
+  "name": "spotify-auth-api",
+  "version": "1.0.0",
+  "description": "API to get spotify access token.",
+  "main": "authorize.js",
+  "author": "Giorgio",
+  "license": "MIT",
+  "devDependencies": {
+    "serverless-bundle": "2.0.0",
+    "serverless-dotenv-plugin": "^2.1.1",
+    "serverless-offline": "^5.3.3"
+  },
+  "dependencies": {
+    "spotify-web-api-node": "^4.0.0"
+  }
+}

@@ -1,0 +1,32 @@
+service: spotify-auth-api
+
+# Create an optimized package for our functions
+package:
+  individually: true
+
+plugins:
+  # - serverless-bundle # Package our functions with Webpack
+  - serverless-offline
+  - serverless-dotenv-plugin # Load .env as environment variables
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: us-east-1
+
+functions:
+  authorize:
+    handler: authorize.auth
+    events:
+      - http:
+          path: authorize
+          method: get
+          cors: true
+  accessCode:
+    handler: authorize.access
+    events:
+      - http:
+          path: access/{accessCode}
+          method: get
+          cors: true
